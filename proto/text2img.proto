@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package text2img;
+
+service TextToImage {
+  rpc Generate (GenerationRequest) returns (GenerationResponse) {}
+}
+
+message GenerationRequest {
+  string prompt = 1;
+}
+
+message GenerationResponse {
+  oneof result {
+    bytes image_data = 1;
+    Error error = 2;
+  }
+}
+
+message Error {
+  string message = 1;
+  int32 code = 2;
+}

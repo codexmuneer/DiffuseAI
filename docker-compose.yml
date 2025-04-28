@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  server:
+    build: ./server
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    ports:
+      - "50051:50051"
+
+  client:
+    build: ./client
+    ports:
+      - "7860:7860"
+    depends_on:
+      - server
