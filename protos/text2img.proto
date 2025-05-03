@@ -3,21 +3,55 @@ syntax = "proto3";
 package text2img;
 
 service TextToImage {
-  rpc Generate (GenerationRequest) returns (GenerationResponse) {}
+  rpc Generate (GenerationRequest) returns (stream GenerationResponse) {}
+  rpc EnhancePrompt (PromptEnhancementRequest) returns (PromptEnhancementResponse) {}
+  rpc ApplyFilter (ImageFilterRequest) returns (ImageFilterResponse) {}
+  rpc GenerateCaption (CaptionGenerationRequest) returns (CaptionGenerationResponse) {}
 }
 
 message GenerationRequest {
   string prompt = 1;
+  optional string style = 2;
 }
+
 
 message GenerationResponse {
   oneof result {
-    bytes image_data = 1;
+    bytes chunk_data = 1;
     Error error = 2;
   }
+  int32 progress = 3;
+  bool is_final = 4;  // Add this new field
+}
+
+message PromptEnhancementRequest {
+  string prompt = 1;
+  bool use_ai_enhancement = 2;
+}
+
+message PromptEnhancementResponse {
+  string enhanced_prompt = 1;
+}
+
+message ImageFilterRequest {
+  bytes image_data = 1;
+  string filter_name = 2;
+}
+
+message ImageFilterResponse {
+  bytes filtered_image = 1;
+}
+
+message CaptionGenerationRequest {
+  bytes image_data = 1;
+}
+
+message CaptionGenerationResponse {
+  string caption = 1;
 }
 
 message Error {
   string message = 1;
   int32 code = 2;
 }
+

@@ -1,16 +1,19 @@
-version: "3.8"
+version: '3.8'
 
 services:
   server:
     build: ./server
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              capabilities: [gpu]
     ports:
       - "50051:50051"
+    environment:
+      - HF_HOME=/app/models
+    volumes:
+      - sd_models:/app/models
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
 
   client:
     build: ./client
@@ -18,3 +21,8 @@ services:
       - "7860:7860"
     depends_on:
       - server
+    volumes:
+      - ./client/gallery:/app/gallery
+
+volumes:
+  sd_models:

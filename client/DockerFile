@@ -1,0 +1,29 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install system deps
+RUN apt-get update && apt-get install -y \
+    libgl1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python deps
+COPY client/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy protobuf definitions
+COPY protos/ /app/protos/
+
+# Generate gRPC files
+RUN python -m grpc_tools.protoc \
+    -I/protos \
+    --python_out=. \
+    --grpc_python_out=. \
+    /protos/text2img.proto
+
+# Copy client code
+COPY client/ /app/
+
+EXPOSE 7860
+
+CMD ["python", "app.py"]
