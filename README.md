@@ -34,7 +34,7 @@ Ideal For: Content creators, app developers, and AI prototyping.
 
 ## 🏛️ Architecture
 
-[Architecture](media/architecture.png) 
+![Architecture](media/architecture.png) 
 
 
 **Key Components:**
@@ -88,7 +88,7 @@ Production:
 | Error Rate       | <2%      | <0.5%  | <1%     |
 
 ## 🔮 Future Improvements
-[Future](media/future.png) 
+![Future](media/future.png) 
 
 
 ## 💡 Example Use Cases
