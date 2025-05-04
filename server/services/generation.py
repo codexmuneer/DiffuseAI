@@ -47,19 +47,3 @@ class GenerationService(TextToImageServicer):
 
 
 
-# from diffusers import StableDiffusionPipeline
-# import torch
-
-# # Load from the saved local folder
-# pipe = StableDiffusionPipeline.from_pretrained(
-#     "./stable-diffusion-2-local",
-#     torch_dtype=torch.float32
-# )
-# pipe = pipe.to("cpu")
-
-# prompt = "A cat and dog on bed."
-# image = pipe(prompt, num_inference_steps=30, guidance_scale=7.5).images[0]
-
-# image.save("generated_image.png")
-# image.show()
-
