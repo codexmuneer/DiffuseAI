@@ -3,16 +3,15 @@
 A gRPC-powered microservice system for text-to-image generation, enhancement, filtering, and captioning.
 
 ### 🎥 Demo Video
-[Click here to view the demo](NLPdemo.mp4)
+![Click here to view the demo](media/NLPdemo.mp4)
 
-![AI Image Generator UI - Showing prompt input, style selection, and generated image](ui.png)
 
 ## 🔗 Quick Links
 - [Postman Collection](https://fast44-9124.postman.co/workspace/fast-Workspace~d5c80df4-643a-4e4c-8e9b-098a413cb747/collection/68169182208059b342cc6866?action=share&creator=28755660)
 - [Github](https://github.com/codexmuneer/NLP_semProject/tree/main)
 - [Docker]()
 
-![currently postman doesnot support exporting grpc collection](postman collection.png)
+![currently postman doesnot support exporting grpc collection](media/postman%20collection.png)
 
 ## 📖 Project Overview
 
@@ -35,7 +34,7 @@ Ideal For: Content creators, app developers, and AI prototyping.
 
 ## 🏛️ Architecture
 
-[Architecture](architecture.png) 
+[Architecture](media/architecture.png) 
 
 
 **Key Components:**
@@ -89,7 +88,7 @@ Production:
 | Error Rate       | <2%      | <0.5%  | <1%     |
 
 ## 🔮 Future Improvements
-[Future](future.png) 
+[Future](media/future.png) 
 
 
 ## 💡 Example Use Cases
