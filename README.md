@@ -9,9 +9,12 @@ A gRPC-powered microservice system for text-to-image generation, enhancement, fi
 ## 🔗 Quick Links
 - [Postman Collection](https://fast44-9124.postman.co/workspace/fast-Workspace~d5c80df4-643a-4e4c-8e9b-098a413cb747/collection/68169182208059b342cc6866?action=share&creator=28755660)
 - [Github](https://github.com/codexmuneer/NLP_semProject/tree/main)
-- [Docker]()
 
-![currently postman doesnot support exporting grpc collection](media/postman%20collection.png)
+## Docker deployement successfully!!
+! [Docker](media/docker.png)
+
+## Currently postman doesnot support exporting grpc collection!
+! (media/postman%20collection.png)
 
 ## 📖 Project Overview
 

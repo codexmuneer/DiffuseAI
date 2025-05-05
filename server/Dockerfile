@@ -17,17 +17,8 @@ COPY server/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy protobuf definitions
-COPY protos/ /app/protos/
+COPY ..
 
-# Generate gRPC files
-RUN python -m grpc_tools.protoc \
-    -I/protos \
-    --python_out=. \
-    --grpc_python_out=. \
-    /protos/text2img.proto
-
-# Fix imports
-RUN sed -i 's/import text2img_pb2/from . import text2img_pb2/' /app/*_pb2*.py
 
 # Copy server code
 COPY server/ /app/

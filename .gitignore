@@ -9,3 +9,12 @@ __pycache__.py
 *.log
 gallery.db
 gallery/
+# Ignore all env folders recursively
+**/env/
+**/envs/
+**/envc/
+
+# Other common ignores
+.env
+__pycache__/
+*.pyc
